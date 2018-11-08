@@ -3,6 +3,7 @@ package com.uday.hackerrank;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 // Avery Big Sum. Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
@@ -10,7 +11,6 @@ import java.util.Scanner;
 public class Problem2 {
 	// Complete the aVeryBigSum function below.
 	static long aVeryBigSum(long[] ar) {
-
 		Long sum = 0l;
 		return sum;
 
@@ -18,8 +18,9 @@ public class Problem2 {
 
 	private static final Scanner scanner = new Scanner(System.in);
 
-	public static void main(String[] args) throws IOException {
-		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+	// Below main method was provided by Hackerrank by default
+	/*
+	 * public static void main(String[] args) throws IOException {
 
 		int arCount = scanner.nextInt();
 		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
@@ -35,12 +36,21 @@ public class Problem2 {
 		}
 
 		long result = aVeryBigSum(ar);
-
-		bufferedWriter.write(String.valueOf(result));
-		bufferedWriter.newLine();
-
-		bufferedWriter.close();
-
+		System.out.println(result);
 		scanner.close();
+	}
+	*/
+	
+	
+	public static void main(String[] args) {
+		int argCount = Integer.parseInt(scanner.nextLine());
+		System.out.println("argCount: "+argCount);
+		
+		Long[] ar = new Long[argCount];
+		String[] arItem = scanner.nextLine().split(" ");
+		for(int i=0; i<arItem.length; i++) {
+			ar[i] = Long.parseLong(arItem[i]);
+		}
+		System.out.println(Arrays.toString(ar));
 	}
 }
